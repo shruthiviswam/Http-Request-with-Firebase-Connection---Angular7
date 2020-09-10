@@ -1,0 +1,23 @@
+<div class="form-group">
+  <label for="Server">Server</label>
+  <input type="text" [(ngModel)] = "name">
+
+<button type = 'submit' class="btn btn-primary" (click) = "onAddServer(name)">Add Server</button>
+<button class="btn btn-primary" (click)="onSave()">Save Server</button>
+<button class = "btn btn-success" (click)="onGet()">Get Server</button>
+</div>
+
+<hr>
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a href="#" *ngFor = "let s of servers">
+        {{s.id}} - {{s.name}}
+        <br>
+      </a>
+      <p>{{this.x}}</p>
+    </div>
+  </div>
+</div>
+<hr>
+<h2>{{appStatus | async}}</h2>
